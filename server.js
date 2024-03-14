@@ -10,7 +10,9 @@ const app = express()
 dotenv.config()
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin: 'http://13.201.5.3:8080'
+}));
 
 // Set up the static files serving for the client build directory
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
